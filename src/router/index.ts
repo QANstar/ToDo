@@ -4,7 +4,7 @@ import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import ToDo from '../views/ToDo.vue';
 import ToDoMain from '../components/ToDoMain.vue';
-
+import ToDoHome from '../components/ToDoHome.vue';
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
@@ -16,12 +16,18 @@ const routes: RouteConfig[] = [
       {
         path: '/',
         name: "ToDo",
-        redirect:'/main'
+        redirect:'/home'
       },
       {
+        path: '/home',
+        name: "ToDo",
+        component: ToDoHome,
+      },
+      {
+        name: "main",
         path: '/main',
         component: ToDoMain,
-    },
+      },
     ]
   },
   {
